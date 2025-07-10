@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure Lockbox</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="lockbox">
+      <!-- First Lockbox -->
+      <div id="lockbox-content">
+        <h2>Enter Password</h2>
+        <p class="hint">🕰️ Only the hands of Wee Andy know when the Spa burned.</p>
+        <form id="password-form">
+          <input 
+            type="password" 
+            id="password-input" 
+            placeholder="••••" 
+            autocomplete="off" 
+            required
+          />
+          <button type="submit">Unlock</button>
+        </form>
+        <div id="feedback" class="hidden">
+          <span id="feedback-text"></span>
+        </div>
+      </div>
+
+      <!-- Protected Content -->
+      <div id="protected-content" class="hidden">
+        <h2>Congratulations!</h2>
+        <p>You’ve unlocked your entry to the Crescent Art Gallery.</p>
+        <img 
+          src="https://cdn.glitch.global/0243080d-f0d8-4094-94c0-184c17bea52d/GalleryEntry(noBG).png?v=1749726279437" 
+          alt="Crescent Art Gallery Ticket" 
+          class="gallery-ticket"
+        />
+        <p class="hint">🖼️ Seek the painting "Sic transit gloria mundi, 1876".</p>
+
+        <!-- Second Lockbox Trigger -->
+        <button id="second-lock-trigger">Found the painting?</button>
+
+        <!-- Second Lockbox -->
+        <div id="second-lockbox" class="hidden">
+          <h3>Who painted "Sic transit gloria mundi"?</h3>
+          <form id="second-password-form">
+            <input 
+              type="text" 
+              id="second-password-input" 
+              placeholder="Artist’s Surname" 
+              autocomplete="off" 
+              style="margin-bottom: 12px;"
+              required 
+            />
+            <button type="submit">Unlock</button>
+          </form>
+          <div id="second-feedback" class="hidden">
+            <span id="second-feedback-text"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
